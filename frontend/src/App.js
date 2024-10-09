@@ -11,8 +11,8 @@ import SearchView from "./components/SearchView";
 const  App=()=> {
   return (
     <div className="App">
-      <Header />
-      <HeaderChild/>
+      <Header className=""/>
+      <HeaderChild  />
       <Outlet/>
     </div>
   );

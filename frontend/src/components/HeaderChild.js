@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header_child = () => {
   return (
-    <div className="bg-[#312e46] h-9 sm:scroll-smooth w-full z-50">
+    <div className="bg-[#312e46] h-9 sm:scroll-smooth w-full  ">
       <ul className="text-white flex justify-between items-center text-sm font-bold px-4 space-x-4 h-full overflow-x-auto whitespace-nowrap">
         <li>
           <Link to="/" className="hover:underline hover:text-yellow-200 ">All</Link>
@@ -37,7 +37,7 @@ const Header_child = () => {
           <Link to="/amazon-pay" className="hover:underline hover:text-yellow-200 ">Amazon Pay</Link>
         </li>
         <li>
-          <Link to="/amazon-basics" className="hover:underline hover:text-yellow-200 ">AmazonBasics</Link>
+          <Link  className="hover:underline hover:text-yellow-200 ">AmazonBasics</Link>
         </li>
       </ul>
     </div>

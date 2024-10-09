@@ -12,8 +12,8 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#0f1111] py-2 px-1 shadow-md w-full sticky m-0 ">
-      <div className="flex items-center justify-between lg:justify-around w-full  ">
+    <header className="bg-[#0f1111] py-2 px-1 shadow-md w-full mt-0 ">
+      <div className="flex items-center justify-between lg:justify-around w-full ">
         <Link to="/">
           <img className="h-9 object-contain w-28 " src={AmazonLogo} alt="Amazon Logo" />
         </Link>
