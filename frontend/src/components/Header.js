@@ -12,8 +12,8 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#0f1111] py-2 px-1 shadow-md w-full mt-0 ">
-      <div className="flex items-center justify-between lg:justify-around w-full ">
+    <header className="bg-[#0f1111] py-2 px-1 shadow-md w-full  ">
+      <div className="flex items-center justify-between lg:justify-around w-full  ">
         <Link to="/">
           <img className="h-9 object-contain w-28 " src={AmazonLogo} alt="Amazon Logo" />
         </Link>
@@ -45,15 +45,20 @@ const Header = () => {
           </button>
         </div>
 
-        <ul className="hidden lg:flex items-center justify-end w-4/12 ml-auto text-white text-sm space-x-6">
+        <ul className="hidden lg:flex items-center justify-end w-4/12 ml-auto text-white text-sm space-x-6 pr-4">
           <li>
             <Link to="/profile" className="hover:text-gray-400">Your Account</Link>
           </li>
           <li>
             <Link to="/" className="hover:text-gray-400">Returns & Orders</Link>
           </li>
-          <li>
-            <Link to="/cart" className="hover:text-gray-400">Cart-{cartItems.length}</Link>
+          <li className="">
+          <Link to="/cart" >
+            <AiOutlineShoppingCart className="text-white w-6 h-6" />
+            <span className="absolute top-3 right-3 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+              {cartItems.length}
+            </span>
+          </Link>
           </li>
         </ul>
       </div>
