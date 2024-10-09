@@ -3,7 +3,7 @@ import Slideshow from "./Slideshow";
 
 const Body =()=>{
   return (
-    <div className="relative">
+    <div className="w-full ">
        <Slideshow/>
        <CardView />
 

@@ -33,7 +33,7 @@ console.log(searchCategory, searchQuery);
   }
 
   return (
-    <div className="m-auto h-36 p-8 flex flex-wrap gap-6 justify-center ">
+    <div className="m-auto  p-8 flex flex-wrap gap-6 justify-center ">
       {filteredList()?.map((item) => {
         return (
           <div  key={item.id} >

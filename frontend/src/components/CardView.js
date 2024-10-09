@@ -1,19 +1,18 @@
 import ItemCard from "./ItemCard";
 import mockData from "../utils/Mockdata";
-const CardView =()=>{
-    const itemList=mockData;
-    
-    return (
-       <div className="absolute bg-transparent z-50 w-full -mt-56 flex flex-wrap gap-10 mr-28 ml-28 ">
-        {itemList.map((item)=>(
-             <div 
-             className="mt-0"
-             key={item.id}>
-                <ItemCard data={item}/>
-             </div>
-        ))}
-       </div> 
-    )
 
-}
+const CardView = () => {
+  const itemList = mockData;
+
+  return (
+    <div className="bg-transparent absolute w-full lg:-mt-80  flex flex-wrap justify-center gap-6 p-4">
+      {itemList.map((item) => (
+        <div className="w-full sm:w-1/2 md:w-1/4 p-2 " key={item.id}>
+          <ItemCard data={item} />
+        </div>
+      ))}
+    </div>
+  );
+};
+
 export default CardView;

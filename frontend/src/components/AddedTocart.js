@@ -1,15 +1,11 @@
-import { useEffect } from "react"
-
-const AddedToCart=({onClose,message})=>{
-    useEffect(()=>{
-const timer=setTimeout(onclose,3000);
-return ()=>clearTimeout(timer);
-    },[onClose])
-return (
-    <div>
-        <h1>{message}</h1>
-    </div>
- 
-)
-}
-export default AddedToCart
+const AddedToCart = ({ message }) => {
+    return (
+      <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50 
+                      sm:px-3 sm:py-1 sm:text-sm sm:top-2 sm:right-2">
+        {message}
+      </div>
+    );
+  };
+  
+  export default AddedToCart;
+  

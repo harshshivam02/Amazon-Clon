@@ -25,7 +25,7 @@ const Slideshow = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="relative">
+    <div className=" mt-0 sm:mt-14 md:mt-0 lg:mt-0">
       <div className="overflow-hidden">
         <img
           src={slides[index]}
@@ -37,20 +37,20 @@ const Slideshow = () => {
 
       <button
         type="button"
-        className="absolute top-0 start-0 z-30 flex items-center justify-center h-64 px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-16 start-0 z-30 flex items-center justify-center h-64 px-4 cursor-pointer group focus:outline-none"
         onClick={prevSlide}
       >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <span className="inline-flex items-center justify-center w-10 h-10">
         <img className="h-8 w-8 "src={prev}alt=""></img>
           <span className="sr-only">Previous</span>
         </span>
       </button>
       <button
        
-        className="absolute top-0 end-0 z-30 flex items-center justify-center h-64 px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-16 end-0 z-30 flex items-center justify-center h-64 px-4 cursor-pointer group focus:outline-none"
         onClick={nextSlide}
       >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full  dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <span className="inline-flex items-center justify-center w-10 h-10 ">
            <img className="h-8 w-8 "src={ next}alt=""></img>
           <span className="sr-only">Next</span>
         </span>

@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const Header_child = () => {
   return (
-    <div className="bg-[#312e46] h-9">
-      <ul className="text-white flex justify-between items-center text-sm font-bold px-4 space-x-4 h-full">
+    <div className="bg-[#312e46] h-9 sm:scroll-smooth w-full z-50">
+      <ul className="text-white flex justify-between items-center text-sm font-bold px-4 space-x-4 h-full overflow-x-auto whitespace-nowrap">
         <li>
           <Link to="/" className="hover:underline hover:text-yellow-200 ">All</Link>
         </li>
