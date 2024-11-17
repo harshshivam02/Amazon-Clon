@@ -3,6 +3,15 @@ import { useState,createContext,useEffect } from "react";
  export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []);
 
+    const updateQuantity = (itemId, change) => {
+        setCartItems(prev => prev.map(item => {
+            if (item.id === itemId) {
+                const newQuantity = Math.max(1, item.quantity + change); // Prevent going below 1
+                return { ...item, quantity: newQuantity };
+            }
+            return item;
+        }));
+    };
 
     const addToCart=(item)=>{
         // check if item already exists in cart
@@ -48,7 +57,8 @@ import { useState,createContext,useEffect } from "react";
         setCartItems([]);
     }
     const getCartTotal=()=>{
-        return cartItems.reduce((total,item)=>total + item.price * item.quantity,0);
+        const total = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+        return Number(total.toFixed(3));
     }
     useEffect(() => {
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -62,7 +72,7 @@ import { useState,createContext,useEffect } from "react";
         }
     },[]);
     return (
-        <cartContext.Provider value={{ cartItems,addToCart,removeFromCart,emptyCart,getCartTotal }}>
+        <cartContext.Provider value={{ cartItems,updateQuantity,addToCart,removeFromCart,emptyCart,getCartTotal }}>
             {children}
         </cartContext.Provider>
     )

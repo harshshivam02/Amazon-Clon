@@ -1,4 +1,4 @@
-
+import { BiSearch } from 'react-icons/bi';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const SearchBar=()=>{
@@ -17,10 +17,10 @@ const SearchBar=()=>{
         navigate(`/search?query=${searchText}&category=${searchOption}`);
       };
 return(
-<div className="flex items-center w-8/12 sm:w-4/5 ml-6">
+<div className="flex flex-grow max-w-[800px] items-center group focus-within:ring-2 focus-within:ring-[#ff9900] rounded-md">
           <select  
           onChange={getoption}
-          id="select"className="h-10 bg-gray-200 text-gray-800 text-sm rounded-l-md px-2 border-r border-gray-400 w-[70px]">
+          id="select"className="h-[40px] bg-[#f3f3f3] hover:bg-[#dadada] text-[#0F1111] text-sm rounded-l-md px-2 border-r border-[#cdcdcd] w-[60px] cursor-pointer focus:outline-none">
             <option value="ALL"  >
               All
             </option>
@@ -36,16 +36,14 @@ return(
           <input
             type="text"
             placeholder="Search Amazon.in"
-            minLength="50"
-            className="flex-grow h-10 px-4 border border-gray-400 rounded-r-none focus:outline-none lg:w-full "
+            className="flex-grow h-[40px] px-4 border-y border-[#cdcdcd] focus:outline-none"
             onChange={(e)=>{
               handleSearch(e);
             }}
           />
-          <button className="h-10 w-15 bg-orange-500 hover:bg-orange-600 text-white rounded-r-md flex items-center justify-center "
+          <button className="h-[40px] w-[45px] bg-[#febd69] hover:bg-[#f3a847] rounded-r-md flex items-center justify-center transition-colors border-y border-r border-[#cdcdcd]"
           onClick={performSearch}>
-           <span className="p-4">search</span>
-
+            <BiSearch size={22} className="text-[#333333]"/>
           </button>
         </div>
 

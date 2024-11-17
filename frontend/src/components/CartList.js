@@ -19,7 +19,7 @@ const CartList = ({ data }) => {
   const quantity = cartItem ? cartItem.quantity : 0;
 
   return (
-    <div className=" lg:w-8/12 mx-auto  p-4 border rounded-md shadow-md hover:shadow-lg transition-shadow duration-200 flex flex-row justify-between mt-5 w-10/12">
+    <div className=" lg:w-8/12  ml-10 px-4 py-2 border rounded-md shadow-md hover:shadow-lg transition-shadow duration-200 flex flex-row justify-between mt-5 w-10/12">
       <div className="float-end w-3/12 sm:w-6/12">
         <div className="relative mb-4 md:mb-0 md:mr-4">
           <img

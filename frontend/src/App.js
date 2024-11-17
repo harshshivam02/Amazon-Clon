@@ -7,6 +7,7 @@ import { Outlet } from "react-router-dom";
 import Profile from "./components/Profile";
 import CartView from "./components/CartView";
 import SearchView from "./components/SearchView";
+import Signin from "./components/Signin";
 
 const  App=()=> {
   return (
@@ -19,6 +20,10 @@ const  App=()=> {
 }
 const appRouter=createBrowserRouter(
   [
+    {
+      path:"/signin",
+      element:<Signin/>,
+    },
     {
       path:"/",
       element:<App/>,

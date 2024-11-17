@@ -37,7 +37,7 @@ const Slideshow = () => {
 
       <button
         type="button"
-        className="absolute top-16 start-0 z-30 flex items-center justify-center h-64 px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-20 start-0 pt z-30 flex items-center justify-center h-64 px-4 cursor-pointer group focus:outline-none"
         onClick={prevSlide}
       >
         <span className="inline-flex items-center justify-center w-10 h-10">
@@ -47,7 +47,7 @@ const Slideshow = () => {
       </button>
       <button
        
-        className="absolute top-16 end-0 z-30 flex items-center justify-center h-64 px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-20 end-0 z-30 flex items-center justify-center h-64 px-4 cursor-pointer group focus:outline-none"
         onClick={nextSlide}
       >
         <span className="inline-flex items-center justify-center w-10 h-10 ">
