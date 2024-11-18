@@ -17,10 +17,10 @@ const SearchBar=()=>{
         navigate(`/search?query=${searchText}&category=${searchOption}`);
       };
 return(
-<div className="flex flex-grow max-w-[800px] items-center group focus-within:ring-2 focus-within:ring-[#ff9900] rounded-md">
+<div className="flex flex-grow max-w-full md:max-w-[800px] items-center group focus-within:ring-2 focus-within:ring-[#ff9900] rounded-md">
           <select  
           onChange={getoption}
-          id="select"className="h-[40px] bg-[#f3f3f3] hover:bg-[#dadada] text-[#0F1111] text-sm rounded-l-md px-2 border-r border-[#cdcdcd] w-[60px] cursor-pointer focus:outline-none">
+          id="select"className="h-[40px] bg-[#f3f3f3] hover:bg-[#dadada] text-[#0F1111] text-xs md:text-sm rounded-l-md px-1 md:px-2 border-r border-[#cdcdcd] w-[50px] md:w-[60px] cursor-pointer focus:outline-none">
             <option value="ALL"  >
               All
             </option>
@@ -36,10 +36,8 @@ return(
           <input
             type="text"
             placeholder="Search Amazon.in"
-            className="flex-grow h-[40px] px-4 border-y border-[#cdcdcd] focus:outline-none"
-            onChange={(e)=>{
-              handleSearch(e);
-            }}
+            className="flex-grow h-[40px] px-2 md:px-4 border-y border-[#cdcdcd] focus:outline-none text-sm"
+            onChange={handleSearch}
           />
           <button className="h-[40px] w-[45px] bg-[#febd69] hover:bg-[#f3a847] rounded-r-md flex items-center justify-center transition-colors border-y border-r border-[#cdcdcd]"
           onClick={performSearch}>

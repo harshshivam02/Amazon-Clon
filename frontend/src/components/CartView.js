@@ -65,26 +65,26 @@ const CartView=()=>{
     ];
 
     return (
-        <div className="flex flex-col lg:flex-row gap-6 p-4 lg:p-8 justify-between mt-[75px]"> 
+        <div className="flex flex-col lg:flex-row gap-4 p-2 md:p-4 lg:p-8 justify-between mt-[30px]"> 
             {/* Left side - Cart Items */}
             <div className="lg:w-8/12">
-                <div className="flex justify-between items-center mb-4">
-                    <h1 className="text-2xl">Shopping Cart</h1>
+                <div className="flex justify-between items-center mb-4 px-2">
+                    <h1 className="text-xl md:text-2xl">Shopping Cart</h1>
                     <span className="text-right">Price</span>
                 </div>
                 <div className="border-t border-gray-200">
                     {cartItems.map((item) => (
-                        <div key={item.id} className="py-4 border-b border-gray-200">
-                            <div className="flex gap-4">
-                                <input type="checkbox" className="mt-4" />
-                                <img src={item.image} alt={item.name} className="w-32 h-32 object-contain" />
-                                <div className="flex-grow">
-                                    <h2 className="text-lg font-medium">{item.name}</h2>
-                                    <div className="text-sm text-green-700 mt-1">In stock</div>
-                                    <div className="text-sm mt-1">Eligible for FREE Shipping</div>
+                        <div key={item.id} className="py-4 border-b border-gray-200 px-2">
+                            <div className="flex flex-col md:flex-row gap-4">
+                                <input type="checkbox" className="hidden md:block mt-4" />
+                                <img src={item.image} alt={item.name} className="w-24 md:w-32 h-24 md:h-32 object-contain mx-auto md:mx-0" />
+                                <div className="flex-grow space-y-2">
+                                    <h2 className="text-base md:text-lg font-medium">{item.name}</h2>
+                                    <div className="text-sm text-green-700">In stock</div>
+                                    <div className="text-xs md:text-sm">Eligible for FREE Shipping</div>
                                     
-                                    {/* Updated Item Controls with Yellow Border */}
-                                    <div className="flex items-center gap-4 mt-2">
+                                    {/* Item Controls */}
+                                    <div className="flex flex-wrap items-center gap-2 md:gap-4">
                                         <div className="flex items-center border-2 border-yellow-400 rounded-lg overflow-hidden">
                                             <button 
                                                 onClick={() => updateQuantity(item.id, -1)}
@@ -108,7 +108,7 @@ const CartView=()=>{
                                         <button className="text-blue-600 hover:text-blue-800 hover:underline">Share</button>
                                     </div>
                                 </div>
-                                <div className="text-lg font-medium">₹{item.price}</div>
+                                <div className="text-lg font-medium text-center md:text-right">₹{item.price}</div>
                             </div>
                         </div>
                     ))}
@@ -120,7 +120,7 @@ const CartView=()=>{
 
             {/* Right side - Order Summary */}
             <div className="lg:w-3/12">
-                <div className="bg-white p-6 rounded-lg border border-gray-200">
+                <div className="bg-white p-4 md:p-6 rounded-lg border border-gray-200">
                     {/* Delivery Progress Bar */}
                     <div className="mb-6">
                         <div className="flex items-center gap-3 mb-2">

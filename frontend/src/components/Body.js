@@ -5,9 +5,9 @@ import Homecard from "./Homecard";
 
 const Body = () => {
   return (
-    <div className="w-full mt-[99px]">
+    <div className="w-full mt-[0px]">
       <Slideshow />
-      <div className="relative -mt-72 z-5">
+      <div className="relative lg:-mt-72 z-5 sm:mt-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-[95%] mx-auto px-4">
           {homeCardData.map((item, index) => (
             <div key={index}>

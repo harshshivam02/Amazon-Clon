@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Sidebar from "./Sidebar";
 
 const Header_child = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <div className="bg-[#232f3e] h-[39px] w-full fixed top-[60px] z-40">
+    <div className={`bg-[#232f3e] h-[39px] w-full fixed ${isMobile ? 'top-[112px]' : 'top-[60px]'} z-40`}>
       <div className="text-white flex items-center text-sm font-bold h-full px-2 max-w-[1500px] mx-auto">
         <button 
           onClick={() => setIsSidebarOpen(true)}
