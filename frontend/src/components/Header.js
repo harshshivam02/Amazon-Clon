@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-[#131921] w-full fixed top-0 z-50">
+      <header className="bg-[#131921] w-full fixed top-0 z-30">
         {/* Main Header */}
         <div className="flex items-center justify-between h-[60px] px-4 mx-auto max-w-[1500px]">
           {/* Left Section */}

@@ -1,16 +1,31 @@
 import { useState,createContext,useEffect } from "react";
  export const cartContext = createContext();
  export const CartProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []);
+    const [cartItems, setCartItems] = useState(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')).map(item => ({...item, isSelected: true})) : []);
 
     const updateQuantity = (itemId, change) => {
         setCartItems(prev => prev.map(item => {
             if (item.id === itemId) {
-                const newQuantity = Math.max(1, item.quantity + change); // Prevent going below 1
-                return { ...item, quantity: newQuantity };
+                if (change < 0 && item.quantity <= 1) {
+                    return item;
+                }
+                return { ...item, quantity: item.quantity + change };
             }
             return item;
         }));
+    };
+
+    const toggleItemSelection = (itemId) => {
+        setCartItems(prev => prev.map(item => {
+            if (item.id === itemId) {
+                return { ...item, isSelected: !item.isSelected };
+            }
+            return item;
+        }));
+    };
+
+    const deleteItem = (itemId) => {
+        setCartItems(prev => prev.filter(item => item.id !== itemId));
     };
 
     const addToCart=(item)=>{
@@ -57,8 +72,10 @@ import { useState,createContext,useEffect } from "react";
         setCartItems([]);
     }
     const getCartTotal=()=>{
-        const total = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-        return Number(total.toFixed(3));
+        const total = cartItems
+            .filter(item => item.isSelected)
+            .reduce((total, item) => total + item.price * item.quantity, 0);
+        return Number(total.toFixed(2));
     }
     useEffect(() => {
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -72,7 +89,7 @@ import { useState,createContext,useEffect } from "react";
         }
     },[]);
     return (
-        <cartContext.Provider value={{ cartItems,updateQuantity,addToCart,removeFromCart,emptyCart,getCartTotal }}>
+        <cartContext.Provider value={{ cartItems,updateQuantity,addToCart,removeFromCart,emptyCart,getCartTotal,toggleItemSelection,deleteItem }}>
             {children}
         </cartContext.Provider>
     )

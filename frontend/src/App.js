@@ -8,6 +8,7 @@ import Profile from "./components/Profile";
 import CartView from "./components/CartView";
 import SearchView from "./components/SearchView";
 import Signin from "./components/Signin";
+import ProductDetails from "./components/ProductDetails";
 
 const  App=()=> {
   return (
@@ -43,7 +44,11 @@ const appRouter=createBrowserRouter(
         {
           path:"/search",
           element:<SearchView/>,
-         }
+         },
+        {
+          path:"/product/:id",
+          element:<ProductDetails/>,
+        }
       ]
     }
   ]

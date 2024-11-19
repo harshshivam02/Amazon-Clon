@@ -1,11 +1,13 @@
 import { cartContext } from "../Context/Cart";
 import AddedToCart from "./AddedTocart";
 import { useState, useContext, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const ItemCard = ({ data }) => {
   const { addToCart, removeFromCart, cartItems } = useContext(cartContext);
   const [addedToCart, setAddedToCart] = useState("");
   const [showAddToCart, setShowAddToCart] = useState(true);
+  const navigate = useNavigate();
 
   const { name, image, description, price, rating, category } = data || {};
 
@@ -32,8 +34,19 @@ const ItemCard = ({ data }) => {
     setAddedToCart(`${name} removed from cart!`);
   };
 
+  const handleCardClick = (e) => {
+    // Prevent navigation if clicking on buttons
+    if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+      return;
+    }
+    navigate(`/product/${data.id}`);
+  };
+
   return (
-    <div className="bg-white flex flex-col p-3 md:p-4 border border-gray-200 shadow-md h-full">
+    <div 
+      className="bg-white flex flex-col p-3 md:p-4 border border-gray-200 shadow-md h-full cursor-pointer hover:shadow-lg transition-shadow"
+      onClick={handleCardClick}
+    >
       <img
         src={image}
         alt={name}

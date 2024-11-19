@@ -11,14 +11,14 @@ const Sidebar = ({ isOpen, onClose }) => {
         <>
           {/* Overlay */}
           <div 
-            className="fixed inset-0 bg-black/50 z-[60] transition-opacity duration-300"
+            className="fixed inset-0 bg-black/50 z-[998] duration-300"
             onClick={onClose}
           />
           
           {/* Sidebar */}
-          <div className="fixed top-0 left-0 h-full w-[365px] bg-white z-[70] overflow-y-auto transform transition-transform duration-300">
+          <div className="fixed top-0 left-0 h-full w-[365px] bg-white z-[999] overflow-y-auto transform transition-transform duration-300">
             {/* Header */}
-            <div className="flex items-center bg-[#232f3e] text-white justify-between flex-row-reverse">
+            <div className="flex items-center bg-[#232f3e] text-white justify-between flex-row-reverse z-50">
               {/* Close button */}
               <button 
                 onClick={onClose}

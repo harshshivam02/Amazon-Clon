@@ -27,12 +27,12 @@ const Slideshow = () => {
   }, []);
 
   return (
-    <div className="mt-[30px] md:mt-[30px] relative">
+    <div className="mt-[40px] md:mt-[30px] relative">
       <div className="overflow-hidden relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[600px]">
         <img
           src={slides[index]}
           alt={`Slide ${index + 1}`}
-          className="w-full h-full object-cover scale-[2] sm:scale-[1.5] md:scale-[1.2] lg:scale-100 transition-transform duration-500 ease-in-out"
+          className="w-full h-full object-cover absolute top-[60px] scale-[1.8] sm:scale-[1.5] sm:top-[70px] md:scale-[1.4] md:top-20 lg:scale-100 lg:top-0 transition-transform duration-500 ease-in-out"
         />
         
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#E3E6E6] pointer-events-none" />
